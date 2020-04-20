@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || "3000";
-const db = process.env.MONGODB_URL;
+const db = "mongodb+srv://terzy:1q2w3e4r@cluster0-lmi5s.mongodb.net/Test?retryWrites=true&w=majority";//process.env.MONGODB_URL;
 
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(()=>{
     console.log("Connected to MongoDB");
