@@ -4,6 +4,7 @@ export default `
         _id: String!
         username: String!
         email: String!
+        userType: String!
         password: String!
         gifs: [Gif]
     }
@@ -11,12 +12,14 @@ export default `
     type Query {
         user(_id: String!): User
         users: [User]
+        currentUser: User
     }
 
     type Mutation {
-        addUser(username: String!, email: String!, password: String!): User
+        addUser(username: String!, email: String!, userType: String!, password: String!): String
+        login(email: String!, password: String!): String
         deleteUser(_id: String!): User
-        editUser(_id: String!, username: String, email: String, password: String, gifs: [GifInput]): User
+        editUser(_id: String!, username: String!, email: String!, password: String!): User
     }
 
 `
