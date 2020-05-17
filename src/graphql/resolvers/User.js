@@ -36,7 +36,7 @@ export default {
                  }])
              }
 
-            return await User.findOne(user._id);   
+            return await User.findById(user._id);   
         }
     },
     Mutation: {
