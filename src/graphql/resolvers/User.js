@@ -127,14 +127,15 @@ export default {
                 })
             })
         },
-        editUser: async (root, {_id, username, email, password}) => {
+        editUser: async (root, {_id, username, email, password, gifs}) => {
             if(!user){
                 throw new Error("User is not authenticated");
             }
             const response = await User.findByIdAndUpdate({_id}, {$set: {
                 username, 
                 email, 
-                password
+                password,
+                gifs
             }}, {new: true}).exec();
             if(!response){
                 throw new Error(`Cannot save user: ${_id}`);

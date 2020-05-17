@@ -19,7 +19,7 @@ export default `
         addUser(username: String!, email: String!, userType: String!, password: String!): String
         login(email: String!, password: String!): String
         deleteUser(_id: String!): User
-        editUser(_id: String!, username: String!, email: String!, password: String!): User
+        editUser(_id: String!, username: String!, email: String!, password: String!, gifs: [GifInput]!): User
     }
 
 `
