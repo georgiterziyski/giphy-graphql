@@ -28,7 +28,7 @@ export default {
                 })
             })
         },
-        currentUser: async (root, {user}) => {
+        currentUser: async (root, args, {user}) => {
              if(!user){
                  throw new ValidationError([{
                      key: 'user',
