@@ -12,7 +12,7 @@ export default `
     type Query {
         user(_id: String!): User
         users: [User]
-        currentUser(): User
+        currentUser: User
     }
 
     type Mutation {
