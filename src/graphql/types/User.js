@@ -10,7 +10,7 @@ export default `
     }
 
     type Query {
-        user(_id: String!): User
+        user(email: String!): User
         users: [User]
         currentUser: User
     }
