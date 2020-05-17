@@ -28,14 +28,21 @@ export default {
                 })
             })
         },
-        currentUser: async (root, args, {user}) => {
-            if(!user){
-                throw new ValidationError([{
-                    key: 'user',
-                    message: 'user_not_authenticated',
-                }])
+        currentUser: async (root, {email}) => {
+            // if(!user){
+            //     throw new ValidationError([{
+            //         key: 'user',
+            //         message: 'user_not_authenticated',
+            //     }])
+            // }
+
+            if(!validator.isEmail(email)){
+                errors.push({
+                    key: 'email',
+                    message: 'email_not_valid',
+                })    
             }
-            return await User.findById(user._id);   
+            return await User.findOne(email);   
         }
     },
     Mutation: {

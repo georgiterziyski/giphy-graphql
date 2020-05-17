@@ -10,9 +10,9 @@ export default `
     }
 
     type Query {
-        user(email: String!): User
+        user(_id: String!): User
         users: [User]
-        currentUser: User
+        currentUser(email: String): User
     }
 
     type Mutation {
